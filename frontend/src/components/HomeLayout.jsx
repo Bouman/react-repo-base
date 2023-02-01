@@ -13,7 +13,7 @@ export default function HomeLayout() {
   let menu = [];
   Object.keys(pages.Home).forEach((item) => {
     const addmenu = {
-      item,
+      label: item,
       path: `${item.replace("Home", "/").toLowerCase()}`,
     };
     menu = [...menu, addmenu];
