@@ -17,7 +17,7 @@ function App() {
       childrenroutes = [
         ...childrenroutes,
         {
-          path: `${files.toLocaleLowerCase()}`,
+          path: `${files.toLocaleLowerCase().replace("home", "/")}`,
           element: (
             <Suspense fallback={<div>Loading...</div>}>
               <Loader foldername={`pages/${folder}`} filename={files} />
