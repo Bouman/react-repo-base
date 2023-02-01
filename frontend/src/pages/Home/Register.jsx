@@ -22,7 +22,6 @@ function LoginPage() {
         lastname,
         email,
         password,
-        serviceId: null,
         admin: 0,
       };
       const sendForm = async () => {
