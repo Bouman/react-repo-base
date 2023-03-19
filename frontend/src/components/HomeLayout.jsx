@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useOutlet } from "react-router-dom";
+import { Navigate, useOutlet } from "react-router-dom";
 import { useAuth } from "../contexts/useAuth";
 import AppBar from "./header/AppBar";
 import FooterBar from "./footer/FooterBar";
@@ -11,9 +11,7 @@ export default function HomeLayout() {
   const { pages } = useContext(FolderContext);
   const outlet = useOutlet();
   let location = "";
-  if (
-    !document.cookie.match(import.meta.env.VITE_NAME_COOKIE)
-  ) {
+  if (!document.cookie.match(import.meta.env.VITE_NAME_COOKIE)) {
     localStorage.setItem("location", "/login");
   }
   if (
@@ -29,7 +27,7 @@ export default function HomeLayout() {
   if (user.email) {
     return <Navigate to={location || "/user/profile"} replace />;
   }
-  
+
   // Creation pages
   let menu = [];
   Object.keys(pages.Home).forEach((item) => {

@@ -35,7 +35,7 @@ function LoginPage() {
             `${import.meta.env.VITE_BACKEND_URL}/login`,
             body2
           );
-if (reslogin.status === 200) {
+          if (reslogin.status === 200) {
             const jsonadmin = await reslogin.json();
             login({
               admin: jsonadmin.admin,
@@ -43,7 +43,7 @@ if (reslogin.status === 200) {
               id: jsonadmin.id,
             });
           } else {
-            setErrotConnect(true);
+            console.warn("Erreur de connexion");
           }
         }
       };
@@ -52,7 +52,7 @@ if (reslogin.status === 200) {
       regex1.test(inputEmail.value) === !true ||
       regex2.test(inputPassword.value) === !true
     ) {
-      console.warn("Erreur input");
+      console.warn("Input invalide");
     }
   };
 
