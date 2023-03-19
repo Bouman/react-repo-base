@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { useOutlet } from "react-router-dom";
+import { useAuth } from "../contexts/useAuth";
 import AppBar from "./header/AppBar";
 import FooterBar from "./footer/FooterBar";
 import { FolderContext } from "../contexts/Folder";
 import "../assets/css/Layout.scss";
 
 export default function HomeLayout() {
+  const { user } = useAuth();
   const { pages } = useContext(FolderContext);
   const outlet = useOutlet();
   let location = "";

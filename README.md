@@ -1,3 +1,13 @@
+## Addition features on template of Wild Code School
+
+- Import Automatic
+- Menu Automatic
+- Automatic router v6 (You need just create file in good folder) :
+    - pages/Home : For all pages accessible when not logged in.
+    - pages/Protected : For all pages accessible connected
+    - pages/Admin : For all pages accessible connected and admin user
+- Authentification + JWT + Cookies
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
@@ -9,8 +19,8 @@ It's pre-configured with a set of tools which'll help students produce industry-
 
 - In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
 - Clone this repo, enter it
-- Run command `npm run setup`
-- _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
+- _NB: To launch the frontend and backend server, you'll need an environment file with database credentials. You'll find a template one in `frontend/.env.sample` and `backend/.env.sample`_
+- Run command `npm run setup && npm run migrate`
 
 ### Available Commands
 
